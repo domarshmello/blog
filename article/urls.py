@@ -7,7 +7,4 @@ urlpatterns = [
     path('', article_list, name="article_list"),
     # localhost:8000/article/1
     path('article/<int:article_id>', article_detail, name="article_detail"),
-
-
-
-]
+    ]   

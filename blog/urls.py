@@ -21,8 +21,9 @@ from article.views import article_detail,article_list
 # 地址 and 第二个参数是请求的方法
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index),
+    path('', views.index, name='home'),
     path('article/', include('article.urls')),
+    path('blog/', include('mytest.urls')),
     # path('article/<int:article_id>', article_detail, name="article_detail"),
     # path('article/', article_list, name="article_list"),
 ]

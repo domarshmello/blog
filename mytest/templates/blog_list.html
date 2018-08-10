@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>测试网站</title>
 </head>
 <body>
-$END$
+<div>
+    <a href="{% url 'blog_list' %}">
+        <h3>博客 all</h3>
+    </a>
+</div>
+<hr>
+    {% for blog in blogs %}
+<a href="{% url 'blog_detail' blog.pk %}">
+    <h3>博客名字：{{ blog.title }}</h3>
+</a>
+    <p>博客内容：{{ blog.content | truncatechars:30}} </p>
+    {% empty %}
+    <p>----暂时没有博客 敬请期待更新---</p>
+    {% endfor %}
+    <p>一共有{{ blogs|length }} 篇博客 </p>
 </body>
 </html>
