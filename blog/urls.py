@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .import views
+
 from article.views import article_detail,article_list
 # url 列表 1.0版本使用的是url 2.0版本使用的是path
 # 地址 and 第二个参数是请求的方法

@@ -1,23 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ blog.title }}</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}
+    {{ blog.title }}
+{% endblock %}
+{% block content %}
 
-<div>
-    <a href="{% url 'blog_list' %}">
-        <h3>所有博客</h3>
-    </a>
-</div>
+    <h2>文章标题：{{ blog.title}}</h2>
+    <hr>
+    <p>作者：{{ blog.author}}</p>
+    <p>文章内容：{{ blog.content}}</p>
+    <p>文章类型：<a href="{% url 'blog_with_type' blog.blog_type.pk %}">
+        {{ blog.blog_type }}
+        </a>
+    </p>
+    <p>发表日期：{{ blog.created_time|date:"Y-m-d G:i:s "}}</p>
 
-<h2>文章标题：{{ blog.title}}</h2>
-<hr>
-<p>作者：{{ blog.author}}</p>
-<p>文章内容：{{ blog.content}}</p>
-<p>文章类型：{{ blog.blog_type}}</p>
-<p>创建日期：{{ blog.created_time|date:"Y-m-d G:i:s "}}</p>
+{% endblock %}
 
-</body>
-</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<title>{{ blog.title }}</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div>-->
+<!--<a href="{% url 'blog_list' %}">-->
+<!--<h3>所有博客</h3>-->
+<!--</a>-->
+<!--</div>-->
+
+<!--<h2>文章标题：{{ blog.title}}</h2>-->
+<!--<hr>-->
+<!--<p>作者：{{ blog.author}}</p>-->
+<!--<p>文章内容：{{ blog.content}}</p>-->
+<!--<p>文章类型：<a href="{% url 'blog_with_type' blog.blog_type.pk %}">{{ blog.blog_type}}</a></p>-->
+<!--<p>创建日期：{{ blog.created_time|date:"Y-m-d G:i:s "}}</p>-->
+
+<!--</body>-->
+<!--</html>-->

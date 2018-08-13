@@ -1,19 +1,22 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
-{% block title %}
-    {{ blog.title }}
+{% block title%}
+    {{blog_type.type_name}}
 {% endblock %}
-{% block content%}
-    <hr>
+
+{% block content %}
+    <h2>博客类型：{{blog_type.type_name}}</h2><br>
     {% for blog in blogs %}
     <a href="{% url 'blog_detail' blog.pk %}">
         <h3>博客名字：{{ blog.title }}</h3>
     </a>
+
     <p>博客内容：{{ blog.content | truncatechars:30}} </p>
     {% empty %}
     <p>----暂时没有博客 敬请期待更新---</p>
     {% endfor %}
     <p>一共有{{ blogs|length }} 篇博客 </p>
+
 {% endblock%}
 
 
@@ -21,18 +24,19 @@
 
 
 <!--<!DOCTYPE html>-->
-<!--<html lang="zh-cn">-->
+<!--<html lang="en">-->
 <!--<head>-->
     <!--<meta charset="UTF-8">-->
-    <!--<title>测试网站</title>-->
+    <!--<title>{{blog_type.type_name}}</title>-->
 <!--</head>-->
 <!--<body>-->
 <!--<div>-->
+    <!--<h3>{{blog_type.type_name}}</h3>-->
     <!--<a href="{% url 'blog_list' %}">-->
         <!--<h3>博客 all</h3>-->
     <!--</a>-->
 <!--</div>-->
-<!--<hr>-->
+
 <!--{% for blog in blogs %}-->
 <!--<a href="{% url 'blog_detail' blog.pk %}">-->
     <!--<h3>博客名字：{{ blog.title }}</h3>-->
@@ -42,5 +46,6 @@
 <!--<p>&#45;&#45;&#45;&#45;暂时没有博客 敬请期待更新-&#45;&#45;</p>-->
 <!--{% endfor %}-->
 <!--<p>一共有{{ blogs|length }} 篇博客 </p>-->
+
 <!--</body>-->
 <!--</html>-->
