@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
-{% block title %} unicorn cms {% endblock %}
+{% load staticfiles %}
+
+{% block title %}
+    我的网站|首页
+{% endblock %}
+
+{% block header_extends %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block nav_home_active %}active{% endblock %}
 
 {% block content %}
-首页
+    <h3 class="home-content">cms网站首页</h3>
 {% endblock %}

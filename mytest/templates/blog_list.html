@@ -14,6 +14,40 @@
     <p>----暂时没有博客 敬请期待更新---</p>
     {% endfor %}
     <p>一共有{{ blogs|length }} 篇博客 </p>
+
+<div class="hidden-xs col-sm-4 col-md-3 col-lg-2">
+    <div class="panel panel-default">
+        <div class="panel-heading">博客分类</div>
+        <div class="panel-body">
+            <ul class="blog-types">
+                {% for blog_type in blog_type %}
+                <li>
+                    <a href="{% url 'blog_with_type' blog_type.pk %}">
+
+                        {{ blog_type.type_name }} ({{ blog_type.blog_count }})
+                    </a>
+                </li>
+                {% empty %}
+                <li>暂无分类</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">日期归档</div>
+        <div class="panel-body">
+            <ul>
+                {% for blog_date, blog_count in blog_dates.items %}
+                <li>
+                    <a href="{% url 'blogs_with_date' blog_date.year blog_date.month %}">
+                        {{ blog_date|date:"Y年m月" }} ({{ blog_count }})
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
 {% endblock %}
 
 
@@ -44,3 +78,7 @@
 <!--<p>一共有{{ blogs|length }} 篇博客 </p>-->
 <!--</body>-->
 <!--</html>-->
+
+
+
+

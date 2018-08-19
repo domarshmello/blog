@@ -28,6 +28,14 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+
+MEDIA_URL = '/media/'
+# 放在django项目根目录，同时也需要创建media文件夹
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CKEDITOR_UPLOAD_PATH = 'upload/'
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +48,7 @@ INSTALLED_APPS = [
     'article',
     'mytest',
     'ckeditor',
+    'ckeditor_uploader', #django-ckeditor 将上传文件的功能迁移到ckeditor_uploader应用
 ]
 
 MIDDLEWARE = [
@@ -111,7 +120,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # LANGUAGE_CODE = 'en-us'
 
-LANGUAGE_CODE = 'zh-Hans'
+# LANGUAGE_CODE = 'zh-Hans'
+LANGUAGE_CODE = 'zh-hans'
 
 # TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Shanghai'

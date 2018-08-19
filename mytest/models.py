@@ -25,3 +25,6 @@ class Blog(models.Model):
     # 这种写法是有利于看清完整的字符串结构。也可以写成 "<Blog:" + self.title + ">" 直接把字符串拼接起来，明显要麻烦很多。另外self.title是python类的用法，取当前类的title字段值。
     def __str__(self):
         return '<Blog: %s>' % self.title
+
+    class Meta:
+        ordering = ['-created_time']

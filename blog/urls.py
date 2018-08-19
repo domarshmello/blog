@@ -15,14 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .import views
+from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 
 from article.views import article_detail,article_list
 # url 列表 1.0版本使用的是url 2.0版本使用的是path
 # 地址 and 第二个参数是请求的方法
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='home'),
+    path('', views.home, name='home'),
     path('article/', include('article.urls')),
     path('blog/', include('mytest.urls')),
     # path('article/<int:article_id>', article_detail, name="article_detail"),
