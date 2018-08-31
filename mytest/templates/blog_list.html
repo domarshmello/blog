@@ -17,7 +17,7 @@
         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    {% block blog_list_title %} 博客列表  （ 共有 {{ page_of_blogs.paginator.count}} 篇博客 ）  {% endblock %}
+                    {% block blog_list_title %} 博客列表  （ 当前页有  {{ blogs|length }}篇博客 ）  {% endblock %}
                 </div>
                 <div class="panel-body">
                     {% for blog in blogs %}
@@ -87,7 +87,7 @@
                                 {% endif %}
                             </li>
                         </ul>
-                        <p>本页面总共有{{ blogs|length }} 篇博客 </p>
+                        <p>总共有 {{ page_of_blogs.paginator.count}} 篇博客 </p>
                 </div>
             </div>
         </div>

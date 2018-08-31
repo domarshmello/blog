@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d76cffe-7b1b-4158-a629-fae1746749c7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/mytest/templates/blogs_with_date.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mytest/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mytest/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mytest/templates/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mytest/templates/blog_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mytest/templates/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mytest/templates/blog_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mytest/templates/blog_with_type.html" beforeDir="false" afterPath="$PROJECT_DIR$/mytest/templates/blog_with_type.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mytest/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mytest/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mytest/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mytest/views.py" afterDir="false" />
     </list>
@@ -40,10 +35,9 @@
       <file leaf-file-name="blog_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mytest/templates/blog_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="128" column="19" lean-forward="true" selection-start-line="128" selection-start-column="19" selection-end-line="128" selection-end-column="19" />
+            <state relative-caret-position="295">
+              <caret line="108" column="38" lean-forward="true" selection-start-line="108" selection-start-column="38" selection-end-line="108" selection-end-column="38" />
               <folding>
-                <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
                 <element signature="e#2299#2306#1" expanded="true" />
                 <element signature="e#2451#2458#1" expanded="true" />
               </folding>
@@ -51,19 +45,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mytest/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="128" column="50" lean-forward="true" selection-start-line="128" selection-start-column="50" selection-end-line="128" selection-end-column="50" />
+            <state relative-caret-position="288">
+              <caret line="163" column="18" selection-start-line="163" selection-start-column="18" selection-end-line="163" selection-end-column="18" />
               <folding>
-                <element signature="e#106#160#0" expanded="true" />
+                <element signature="e#5379#5445#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blogs_with_date.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="blogs_with_date.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mytest/templates/blogs_with_date.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
@@ -140,9 +134,9 @@
         <option value="$PROJECT_DIR$/mytest/templates/blog_with_type.html" />
         <option value="$PROJECT_DIR$/mytest/templates/blog_detail.html" />
         <option value="$PROJECT_DIR$/mytest/models.py" />
+        <option value="$PROJECT_DIR$/mytest/templates/blogs_with_date.html" />
         <option value="$PROJECT_DIR$/mytest/urls.py" />
         <option value="$PROJECT_DIR$/mytest/templates/blog_list.html" />
-        <option value="$PROJECT_DIR$/mytest/templates/blogs_with_date.html" />
         <option value="$PROJECT_DIR$/mytest/views.py" />
       </list>
     </option>
@@ -509,12 +503,12 @@
       <workItem from="1535520791485" duration="29000" />
       <workItem from="1535521505640" duration="25558000" />
       <workItem from="1535691593327" duration="17409000" />
-      <workItem from="1535729024566" duration="2017000" />
+      <workItem from="1535729024566" duration="3442000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90215000" />
+    <option name="totallyTimeSpent" value="91640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="240" y="22" width="1440" height="878" extended-state="0" />
@@ -541,11 +535,11 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.44430217" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8202765" visible="true" weight="0.18579628" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.368758" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.841785" visible="true" weight="0.13199426" />
       <window_info anchor="right" id="SciView" order="4" visible="true" weight="0.039454807" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" sideWeight="0.1797235" side_tool="true" visible="true" weight="0.18579628" />
+      <window_info id="Favorites" order="2" sideWeight="0.15821502" side_tool="true" visible="true" weight="0.13199426" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info id="Nl-Palette" order="2" />
@@ -885,15 +879,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mytest/templates/blog_list.html">
+    <entry file="file://$PROJECT_DIR$/mytest/templates/blogs_with_date.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="128" column="19" lean-forward="true" selection-start-line="128" selection-start-column="19" selection-end-line="128" selection-end-column="19" />
-          <folding>
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="e#2299#2306#1" expanded="true" />
-            <element signature="e#2451#2458#1" expanded="true" />
-          </folding>
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -907,20 +896,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mytest/views.py">
+    <entry file="file://$PROJECT_DIR$/mytest/templates/blog_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="128" column="50" lean-forward="true" selection-start-line="128" selection-start-column="50" selection-end-line="128" selection-end-column="50" />
+        <state relative-caret-position="295">
+          <caret line="108" column="38" lean-forward="true" selection-start-line="108" selection-start-column="38" selection-end-line="108" selection-end-column="38" />
           <folding>
-            <element signature="e#106#160#0" expanded="true" />
+            <element signature="e#2299#2306#1" expanded="true" />
+            <element signature="e#2451#2458#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mytest/templates/blogs_with_date.html">
+    <entry file="file://$PROJECT_DIR$/mytest/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="288">
+          <caret line="163" column="18" selection-start-line="163" selection-start-column="18" selection-end-line="163" selection-end-column="18" />
+          <folding>
+            <element signature="e#5379#5445#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
