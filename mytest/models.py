@@ -10,7 +10,7 @@ from taggit.managers import TaggableManager  # 添加django-taggit提供的Tagga
 class BlogType(models.Model):
     type_name = models.CharField(verbose_name='分类', max_length=20)
 
-# 返回显示类别名称即可
+    # 返回显示类别名称即可
     def __str__(self):
         return self.type_name
 
@@ -23,7 +23,8 @@ class Blog(models.Model):
     author = models.ForeignKey(User, verbose_name='作者', on_delete=models.DO_NOTHING)
     created_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
     last_update_time = models.DateTimeField(verbose_name='更新时间', auto_now_add=True)
-    tags = TaggableManager()   # tags器管理网求允许你从Blog对象中添加，检索和移除标签。
+    tags = TaggableManager()  # tags器管理网求允许你从Blog对象中添加，检索和移除标签。
+    readed_num = models.IntegerField(verbose_name='点击阅读量', default=0)
 
     # 其中%s是占位符，先占个位子，用%后面的内容替换。
     # __str__()方法是对象的默认可读表示

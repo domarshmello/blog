@@ -28,10 +28,25 @@
                 <li>文章类型：<a href="{% url 'blog_with_type' blog.blog_type.pk %}"> {{ blog.blog_type }} </a></li>
                 <li>发表日期：{{ blog.created_time|date:"Y-m-d G:i:s "}}</li>
             </ul>
+            <div class="blog-content">{{ blog.content|safe }}</div>
 
-            <div class="blog-content">文章内容：{{ blog.content}}</div>
+            <div class="blog-more">
+                <p>上一篇：
+                    {% if previous_blog %}
+                        <a href="{% url 'blog_detail' previous_blog.pk %}">{{ previous_blog.title }}</a>
+                    {% else %}
+                        没有了
+                    {% endif %}
+                </p>
+                <p>下一篇：
+                    {% if next_blog %}
+                        <a href="{% url 'blog_detail' next_blog.pk %}">{{ next_blog.title }}</a>
+                    {% else %}
+                        没有了
+                    {% endif %}
+                </p>
 
-
+            </div>
 
         </div>
     </div>
@@ -41,28 +56,3 @@
 
 {% endblock %}
 
-
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--<meta charset="UTF-8">-->
-<!--<title>{{ blog.title }}</title>-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<div>-->
-<!--<a href="{% url 'blog_list' %}">-->
-<!--<h3>所有博客</h3>-->
-<!--</a>-->
-<!--</div>-->
-
-<!--<h2>文章标题：{{ blog.title}}</h2>-->
-<!--<hr>-->
-<!--<p>作者：{{ blog.author}}</p>-->
-<!--<p>文章内容：{{ blog.content}}</p>-->
-<!--<p>文章类型：<a href="{% url 'blog_with_type' blog.blog_type.pk %}">{{ blog.blog_type}}</a></p>-->
-<!--<p>创建日期：{{ blog.created_time|date:"Y-m-d G:i:s "}}</p>-->
-
-<!--</body>-->
-<!--</html>-->
