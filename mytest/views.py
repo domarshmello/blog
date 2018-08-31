@@ -8,16 +8,31 @@ from django.core.paginator import Paginator
 from mytest.models import Blog, BlogType
 # Create your views here.
 
-
 from taggit.models import Tag
 
 
 # 视图接收request对象作为唯一的参数。记住，该参数是所有视图都必需的
 def blog_list(request):
     blogs_all_list = Blog.objects.all()
-    paginator = Paginator(blogs_all_list, 10)  # 每10篇分页
+    paginator = Paginator(blogs_all_list, 2)  # 每10篇分页
     page_num = request.GET.get('page', 1)  # 获取url的页面参数
     page_of_blogs = paginator.get_page(page_num)
+    current_page_num = page_of_blogs.number  # 获取当前页码
+    # page_range = [current_page_num - 2,  current_page_num - 1, current_page_num, current_page_num + 1,
+    # current_page_num + 2]
+
+    print(list(range(max(current_page_num - 2, 1), current_page_num)))
+
+    # 使用range()函数 max()和1进行比较 总页码数paginator.num_pages  ---->获取当前页面前后各两页的页码范围
+    page_range = list(range(max(current_page_num - 2, 1), current_page_num)) + \
+                 list(range(current_page_num + 1, min(current_page_num + 2, paginator.num_pages + 1)))
+
+    #如果第一个不是第一页 插入1页码
+    if page_range[0] != 1:
+        page_range.insert(0, 1)
+    #如果第一个不是最后一页 插入最后总共的分的页码
+    if page_range[-1] != paginator.num_pages:
+        page_range.append(paginator.num_pages)
 
     context = {}
     # 页面通过blogs对象可以获取数据

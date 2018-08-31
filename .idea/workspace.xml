@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d76cffe-7b1b-4158-a629-fae1746749c7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mytest/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mytest/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mytest/templates/blog_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mytest/templates/blog_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mytest/templates/blog_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mytest/templates/blog_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mytest/templates/blog_with_type.html" beforeDir="false" afterPath="$PROJECT_DIR$/mytest/templates/blog_with_type.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mytest/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mytest/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blog_list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="blog_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mytest/templates/blog_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="88" column="30" selection-start-line="88" selection-start-column="30" selection-end-line="88" selection-end-column="30" />
+            <state relative-caret-position="-371">
+              <caret line="68" column="64" lean-forward="true" selection-start-line="68" selection-start-column="64" selection-end-line="68" selection-end-column="64" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
                 <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
@@ -47,6 +42,18 @@
                 <element signature="e#2518#2525#1" expanded="true" />
                 <element signature="e#3640#3647#1" expanded="true" />
                 <element signature="e#3792#3799#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mytest/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+              <folding>
+                <element signature="e#106#160#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,8 +107,8 @@
         <option value="$PROJECT_DIR$/mytest/templates/blog_detail.html" />
         <option value="$PROJECT_DIR$/mytest/models.py" />
         <option value="$PROJECT_DIR$/blog/settings.py" />
-        <option value="$PROJECT_DIR$/mytest/views.py" />
         <option value="$PROJECT_DIR$/mytest/templates/blog_list.html" />
+        <option value="$PROJECT_DIR$/mytest/views.py" />
       </list>
     </option>
   </component>
@@ -111,6 +118,12 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="MavenRunner">
     <option name="vmOptions" value="-Dfile.encoding=GB2312" />
   </component>
@@ -118,10 +131,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="497" />
-    <option name="y" value="195" />
-    <option name="width" value="885" />
-    <option name="height" value="686" />
+    <option name="x" value="406" />
+    <option name="y" value="179" />
+    <option name="width" value="997" />
+    <option name="height" value="756" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -145,19 +158,6 @@
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="mytest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="mytest" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="mytest" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
@@ -473,21 +473,21 @@
       <workItem from="1534648994507" duration="8494000" />
       <workItem from="1535520791485" duration="29000" />
       <workItem from="1535521505640" duration="25558000" />
-      <workItem from="1535691593327" duration="11741000" />
+      <workItem from="1535691593327" duration="13657000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82530000" />
+    <option name="totallyTimeSpent" value="84446000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="497" y="195" width="885" height="686" extended-state="0" />
+    <frame x="364" y="173" width="997" height="756" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="RestServices" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.32912722" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -505,11 +505,11 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.20033956" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.83439493" visible="true" weight="0.0989273" />
-      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.15629742" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.85971224" visible="true" weight="0.11251315" />
+      <window_info active="true" anchor="right" id="SciView" order="4" visible="true" weight="0.057833858" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" sideWeight="0.1656051" side_tool="true" visible="true" weight="0.0989273" />
+      <window_info id="Favorites" order="2" sideWeight="0.14028777" side_tool="true" visible="true" weight="0.11251315" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info id="Nl-Palette" order="2" />
@@ -867,22 +867,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mytest/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding>
-            <element signature="e#106#160#0" expanded="true" />
-            <element signature="e#778#967#0" />
-            <element signature="e#1017#1434#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mytest/templates/blog_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="88" column="30" selection-start-line="88" selection-start-column="30" selection-end-line="88" selection-end-column="30" />
+        <state relative-caret-position="-371">
+          <caret line="68" column="64" lean-forward="true" selection-start-line="68" selection-start-column="64" selection-end-line="68" selection-end-column="64" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
             <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
@@ -890,6 +878,16 @@
             <element signature="e#2518#2525#1" expanded="true" />
             <element signature="e#3640#3647#1" expanded="true" />
             <element signature="e#3792#3799#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mytest/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+          <folding>
+            <element signature="e#106#160#0" expanded="true" />
           </folding>
         </state>
       </provider>

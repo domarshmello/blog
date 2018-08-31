@@ -61,7 +61,7 @@
 
                             {# 全部页码 #}
                             {% for page_num in page_of_blogs.paginator.page_range %}
-
+                            <!-- 判断当前页面 page_num == page_of_blogs.number  高亮active -->
                             {% if page_num == page_of_blogs.number %}
                             <li class="active"><span>{{ page_num }}</span></li>
                             {% else %}
