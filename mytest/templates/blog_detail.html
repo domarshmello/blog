@@ -8,6 +8,7 @@
     <hr>
     <p>作者：{{ blog.author}}</p>
     <p>文章内容：{{ blog.content}}</p>
+<!--对应每个blog_type对象取得对应的pk值-->
     <p>文章类型：<a href="{% url 'blog_with_type' blog.blog_type.pk %}">
         {{ blog.blog_type }}
         </a>

@@ -13,4 +13,4 @@ class Article(models.Model):
     last_update_time = models.DateTimeField(verbose_name='更新日期', auto_now=True)
     # author=models.ForeignKey(User, on_delete=models.DO_NOTHING, default=1)
     is_delete = models.BooleanField(verbose_name='删除', default=False)
-    readed_num = models.IntegerField(default=0)
+    readed_num = models.IntegerField(verbose_name='阅读点击量', default=0)

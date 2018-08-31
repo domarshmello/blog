@@ -1,84 +1,87 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
 {% block title %}
     {{ blog.title }}
 {% endblock %}
-{% block content%}
-    <hr>
-    {% for blog in blogs %}
-    <a href="{% url 'blog_detail' blog.pk %}">
-        <h3>博客名字：{{ blog.title }}</h3>
-    </a>
-    <p>博客内容：{{ blog.content | truncatechars:30}} </p>
-    {% empty %}
-    <p>----暂时没有博客 敬请期待更新---</p>
-    {% endfor %}
-    <p>一共有{{ blogs|length }} 篇博客 </p>
 
-<div class="hidden-xs col-sm-4 col-md-3 col-lg-2">
-    <div class="panel panel-default">
-        <div class="panel-heading">博客分类</div>
-        <div class="panel-body">
-            <ul class="blog-types">
-                {% for blog_type in blog_type %}
-                <li>
-                    <a href="{% url 'blog_with_type' blog_type.pk %}">
+{% block nav_blog_active %} active {% endblock %}
 
-                        {{ blog_type.type_name }} ({{ blog_type.blog_count }})
-                    </a>
-                </li>
-                {% empty %}
-                <li>暂无分类</li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">日期归档</div>
-        <div class="panel-body">
-            <ul>
-                {% for blog_date, blog_count in blog_dates.items %}
-                <li>
-                    <a href="{% url 'blogs_with_date' blog_date.year blog_date.month %}">
-                        {{ blog_date|date:"Y年m月" }} ({{ blog_count }})
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-
+{% load staticfiles %}
+{% block header_extends %}
+<link rel="stylesheet" href="{% static 'blog/blog.css' %}">
 {% endblock %}
 
+{# 页面内容 #}
+{% block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {% block blog_list_title %}博客列表{% endblock %} （ 共有 {{blogs | length}} 篇博客 ）
+                </div>
+                <div class="panel-body">
+                    {% for blog in blogs %}
+                    <div class="blog">
+
+                       <h3>
+                           <a href="{% url 'blog_detail' blog.pk %}">博客名字：{{ blog.title }} </a>
+                       </h3>
+                        <p>作者：{{ blog.author | truncatechars:100}} </p>
+                        <!--设置博客内容长度显示30个字 过滤器 |   truncatechars   truncatewords  -->
+                        {# 设置博客内容长度显示30个字 过滤器 |   truncatechars   truncatewords #}
+                        <p>博客内容：{{ blog.content | truncatechars:30}} </p>
+                    </div>
+                        {% empty %}
+                    <div class="blog">
+                        <h3>暂时没有博客 敬请期待更新</h3>
+                    </div>
+                        {% endfor %}
 
 
+                </div>
+                <div class="panel-footer">
+                        <p>现在总共有{{ blogs|length }} 篇博客 </p>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 
-<!--<!DOCTYPE html>-->
-<!--<html lang="zh-cn">-->
-<!--<head>-->
-    <!--<meta charset="UTF-8">-->
-    <!--<title>测试网站</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<div>-->
-    <!--<a href="{% url 'blog_list' %}">-->
-        <!--<h3>博客 all</h3>-->
-    <!--</a>-->
-<!--</div>-->
-<!--<hr>-->
-<!--{% for blog in blogs %}-->
-<!--<a href="{% url 'blog_detail' blog.pk %}">-->
-    <!--<h3>博客名字：{{ blog.title }}</h3>-->
-<!--</a>-->
-<!--<p>博客内容：{{ blog.content | truncatechars:30}} </p>-->
-<!--{% empty %}-->
-<!--<p>&#45;&#45;&#45;&#45;暂时没有博客 敬请期待更新-&#45;&#45;</p>-->
-<!--{% endfor %}-->
-<!--<p>一共有{{ blogs|length }} 篇博客 </p>-->
-<!--</body>-->
-<!--</html>-->
+            <div class="panel panel-default">
+                    <div class="panel-heading">博客分类 {{ blog_types | length }}</div>
+                        <div class="panel-body">
+                            <ul class="blog-types">
+                                {% for blog_type in blog_types %}
+                                <li>
+                                    <a href="{% url 'blog_with_type' blog_type.pk %}">
+                                        {{ blog_type.type_name }} ( {{ blog_type.type_name | length }} )
+                                    <!--{{ blog_type.type_name }} ( {{ blog_type.blog_count }} )-->
+                                    </a>
+                                 </li>
+                            {% empty %}
+                                <li>暂无分类</li>
+                                {% endfor %}
+                             </ul>
+                        </div>
+            </div>
+            <div class="panel panel-default">
+                 <div class="panel-heading">日期归档</div>
+                    <div class="panel-body">
+                     <ul>
+                        {% for blog_date, blog_count in blog_dates.items %}
+                            <li>
+                                 <a href="{% url 'blogs_with_date' blog_date.year blog_date.month %}">
+                                    {{ blog_date|date:"Y年m月" }} ({{ blog_count }})
+                                 </a>
+                            </li>
+                        {% endfor %}
+                     </ul>
+                     </div>
+             </div>
 
+        </div>
+    </div>
+</div>
 
-
-
+{% endblock %}

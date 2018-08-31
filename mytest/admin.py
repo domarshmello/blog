@@ -2,16 +2,19 @@ from django.contrib import admin
 from .models import BlogType, Blog
 
 
+# 用于注册模型，把它们包括进Django管理站点。是否使用Django管理站点是可选的。
+
 # Register your models here.
 @admin.register(BlogType)
 class BlogTypeAdmin(admin.ModelAdmin):
+    # 设置显示的列表
     list_display = ('id', 'type_name')
 
 
 # Blog模型的管理器
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    # listdisplay设置要显示在列表中的字段（id字段是Django模型的默认主键）
+    # list_display设置要显示在列表中的字段（id字段是Django模型的默认主键）
     list_display = ('id', 'title', 'blog_type', 'content', 'author', 'created_time', 'last_update_time')
 
     # list_per_page设置每页显示多少条记录，默认是100条

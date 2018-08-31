@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -27,18 +26,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
-
 MEDIA_URL = '/media/'
 # 放在django项目根目录，同时也需要创建media文件夹
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CKEDITOR_UPLOAD_PATH = 'upload/'
 
-
 # Application definition
 
 INSTALLED_APPS = [
+    'bootstrap_admin',  # 一定要放在`django.contrib.admin`前面
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,7 +45,8 @@ INSTALLED_APPS = [
     'article',
     'mytest',
     'ckeditor',
-    'ckeditor_uploader', #django-ckeditor 将上传文件的功能迁移到ckeditor_uploader应用
+    'taggit',  # 第三方的Django的标签应用，来实现这个功能。django-taggit是一个可复用的应用，提供主要一个了Tag模型状语从句：一个管理器，可以很容易的为任何模型添加标签。
+    'ckeditor_uploader',  # django-ckeditor 将上传文件的功能迁移到ckeditor_uploader应用
 ]
 
 MIDDLEWARE = [
@@ -67,7 +65,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            # 自定义 设置全局模板文件夹
+            # 自定义 设置全局模板文件夹 os是python封装的路径库 路径拼接join 识别templates全局文件夹
             os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
@@ -84,7 +82,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
@@ -94,7 +91,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -114,7 +110,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -132,8 +127,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
+# 静态文件路径 但是不知道静态文件放在哪
 STATIC_URL = '/static/'
+# 拼接路径 让django识别 通过路径 找到 static里面的文件
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
