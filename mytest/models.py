@@ -2,7 +2,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from ckeditor.fields import RichTextField
-from taggit.managers import TaggableManager # 添加django-taggit提供的TaggableManager管理器到Post模型：
+from taggit.managers import TaggableManager  # 添加django-taggit提供的TaggableManager管理器到Post模型：
 
 
 # Create your models here.
