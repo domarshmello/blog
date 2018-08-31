@@ -6,7 +6,7 @@ div.blog:not(:last-child){
     padding-bottom: 1em;
     border-bottom: 1px solid #eee;
 }
-div.blog h3 {
+div.blog h3{
     margin-top: 0.5em;
 }
 div.blog p.blog-info {

@@ -143,10 +143,10 @@ def get_blog_list_common_data(request, blogs_all_list):
     paginator = Paginator(blogs_all_list, settings.EACH_PAGE_BLOGS_NUMBER)
     page_num = request.GET.get('page', 1)  # 获取url的页面参数（GET请求）
     page_of_blogs = paginator.get_page(page_num)
-    currentr_page_num = page_of_blogs.number  # 获取当前页码
+    current_page_num = page_of_blogs.number  # 获取当前页码
     # 获取当前页码前后各2页的页码范围
-    page_range = list(range(max(currentr_page_num - 2, 1), currentr_page_num)) + \
-                 list(range(currentr_page_num, min(currentr_page_num + 2, paginator.num_pages) + 1))
+    page_range = list(range(max(current_page_num - 2, 1), current_page_num)) + \
+                 list(range(current_page_num, min(current_page_num + 2, paginator.num_pages) + 1))
     # 加上省略页码标记
     if page_range[0] - 1 >= 2:
         page_range.insert(0, '...')
@@ -172,13 +172,14 @@ def get_blog_list_common_data(request, blogs_all_list):
     for blog_date in blog_dates:
         blog_count = Blog.objects.filter(created_time__year=blog_date.year,
                                          created_time__month=blog_date.month).count()
+
         blog_dates_dict[blog_date] = blog_count
 
     context = {}
     context['blogs'] = page_of_blogs.object_list
     context['page_of_blogs'] = page_of_blogs
     context['page_range'] = page_range
-    context['blog_types'] = BlogType.objects.annotate(blog_count=Count('blog'))
+    context['blog_types'] = BlogType.objects.annotate(blog_count=Count('blog'))  # annotate拓展查询字段 blog是模型对象  统计?
     context['blog_dates'] = blog_dates_dict
     return context
 

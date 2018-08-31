@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from . import views
 
 
 
@@ -30,7 +30,12 @@ urlpatterns = [
     # 后台管理页面
     path('admin/', admin.site.urls),
     path('article/', include('article.urls')),
-    path('blog/', include('mytest.urls')),
+    path('ckeditor', include('ckeditor_uploader.urls')),
+    path('ckeditor', include('mytest.urls')),
     # path('article/<int:article_id>', article_detail, name="article_detail"),
     # path('article/', article_list, name="article_list"),
 ]
+
+# 设置media的访问路径
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

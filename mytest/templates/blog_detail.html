@@ -27,6 +27,7 @@
                 <!--对应每个blog_type对象取得对应的pk值-->
                 <li>文章类型：<a href="{% url 'blog_with_type' blog.blog_type.pk %}"> {{ blog.blog_type }} </a></li>
                 <li>发表日期：{{ blog.created_time|date:"Y-m-d G:i:s "}}</li>
+                <li>阅读点击量：({{ blog.readed_num }})</li>
             </ul>
             <div class="blog-content">{{ blog.content|safe }}</div>
 

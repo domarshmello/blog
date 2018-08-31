@@ -136,6 +136,13 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+# media
+MEDIA_URL = '/media/'
+# 上传的图片 文件保存的位置media / upload  在根目录下
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# 配置ckeditor
+CKEDITOR_UPLOAD_PATH = 'upload/'
 
 # 自定义参数  每10篇分页
 EACH_PAGE_BLOGS_NUMBER = 10
