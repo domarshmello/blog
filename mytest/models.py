@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db import models
 # from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.db.models.fields import exceptions
 from taggit.managers import TaggableManager  # 添加django-taggit提供的TaggableManager管理器到Post模型：
 
 
@@ -26,7 +27,18 @@ class Blog(models.Model):
     created_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
     last_update_time = models.DateTimeField(verbose_name='更新时间', auto_now_add=True)
     tags = TaggableManager()  # tags器管理网求允许你从Blog对象中添加，检索和移除标签。
-    readed_num = models.IntegerField(verbose_name='点击阅读量', default=0)
+
+    # readed_num = models.IntegerField(verbose_name='点击阅读量', default=0)
+
+    def get_read_num(self):
+        try:
+            return self.readnum.read_num
+
+        except exceptions.ObjectDoesNotExist:
+            # 错误类型 返回0
+            return 0
+
+        # readnum 对象 ?
 
     # 其中%s是占位符，先占个位子，用%后面的内容替换。
     # __str__()方法是对象的默认可读表示
@@ -37,3 +49,10 @@ class Blog(models.Model):
     # 模型中的Meta类包含元数据。我们告诉Django，查询数据库时，默认排序是publish字段的�降序排列。我们使用负号前缀表示降序排列。
     class Meta:
         ordering = ['-created_time']
+
+
+class ReadNum(models.Model):
+    read_num = models.IntegerField(verbose_name='点击阅读量', default=0)
+
+    # 多对一  1--1OneToOneField
+    blog = models.OneToOneField(Blog, on_delete=models.DO_NOTHING)

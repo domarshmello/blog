@@ -4,8 +4,10 @@ from django.shortcuts import render_to_response
 
 
 #
-# def index(request):
-#     return HttpResponse("Hello world")
+def index(request):
+    context = {}
+    return render_to_response('sitemap.xml', context)
+
 
 def home(request):
     context = {}

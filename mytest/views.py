@@ -131,12 +131,12 @@
 #     return render_to_response("blog_detail.html", context)
 #
 
-
+from datetime import datetime
 from django.shortcuts import render_to_response, get_object_or_404
 from django.core.paginator import Paginator
 from django.conf import settings
 from django.db.models import Count
-from .models import Blog, BlogType
+from .models import Blog, BlogType, ReadNum
 
 
 def get_blog_list_common_data(request, blogs_all_list):
@@ -206,15 +206,36 @@ def blogs_with_date(request, year, month):
 
 
 def blog_detail(request, blog_pk):
+    # blog_pk===key
     blog = get_object_or_404(Blog, pk=blog_pk)
+
+    # 字典的get方法 获取key  不存在key的时候 ===代表刚打开浏览器    加1操作
     if not request.COOKIES.get('blog_%s_readed' % blog_pk):
-        blog.readed_num += 1
-        blog.save()
+        # 判断博客记录存在？
+        if ReadNum.objects.filter(blog=blog).count():
+            readnum = ReadNum.objects.get(blog=blog)
+            # readnum.read_num += 1
+            # readnum.save()
+
+            # blog.readed_num += 1
+            # blog.save()
+        else:
+            #不存在对应的记录
+            readnum = ReadNum()
+            # readnum.read_num += 1
+            # readnum.blog = blog
+        readnum.read_num += 1
+        readnum.save()
+
+
 
     context = {}
     context['previous_blog'] = Blog.objects.filter(created_time__gt=blog.created_time).last()
     context['next_blog'] = Blog.objects.filter(created_time__lt=blog.created_time).first()
     context['blog'] = blog
     response = render_to_response('blog_detail.html', context)  # 响应
+    # 利用cookie  （在python中 是以字典的形式保存 ===使用保存key  ）来保存阅读点击量      response.set_cookie(key, value) 120s有效
+    # max_age=120, expires=datetime 2选一 即可  不写的话 cookie就是关闭浏览器失效
     response.set_cookie('blog_%s_readed' % blog_pk, 'true')
+    # response.set_cookie('blog_%s_readed' % blog_pk, 'true', max_age=120, expires=datetime)
     return response

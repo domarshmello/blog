@@ -6,6 +6,8 @@
       <w>endblock</w>
       <w>endfor</w>
       <w>readed</w>
+      <w>readnum</w>
+      <w>rollyourown</w>
       <w>truncatechars</w>
     </words>
   </dictionary>
