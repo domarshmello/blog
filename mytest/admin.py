@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BlogType, Blog, ReadNum
+from .models import BlogType, Blog
 
 
 # 用于注册模型，把它们包括进Django管理站点。是否使用Django管理站点是可选的。
@@ -16,7 +16,6 @@ class BlogTypeAdmin(admin.ModelAdmin):
 class BlogAdmin(admin.ModelAdmin):
     # list_display设置要显示在列表中的字段（id字段是Django模型的默认主键）
     list_display = ('id', 'title', 'blog_type', 'author', 'get_read_num', 'content', 'last_update_time')
-    # list_display = ('id', 'title', 'blog_type', 'content', 'author', 'created_time', 'last_update_time')
 
     # list_per_page设置每页显示多少条记录，默认是100条
     list_per_page = 20
@@ -32,7 +31,4 @@ class BlogAdmin(admin.ModelAdmin):
     date_hierarchy = 'last_update_time'  # 详细时间分层筛选
 
 
-# Blog模型的管理器
-@admin.register(ReadNum)
-class ReadNumAdmin(admin.ModelAdmin):
-    list_display = ('read_num', 'blog')
+

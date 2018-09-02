@@ -1,13 +1,13 @@
 # 应用的数据模型。所有Django应用必须有一个models.py文件，但该文件可以为空。
 from django.contrib.auth.models import User
 from django.db import models
-# from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
-from django.db.models.fields import exceptions
 from taggit.managers import TaggableManager  # 添加django-taggit提供的TaggableManager管理器到Post模型：
-
+from read_statistics.models import ReadNumExpandMethod
 
 # Create your models here.
+
+
 
 class BlogType(models.Model):
     type_name = models.CharField(verbose_name='分类', max_length=20)
@@ -17,7 +17,7 @@ class BlogType(models.Model):
         return self.type_name
 
 
-class Blog(models.Model):
+class Blog(models.Model, ReadNumExpandMethod):
     title = models.CharField(verbose_name='标题', max_length=60)
     blog_type = models.ForeignKey(BlogType, verbose_name='类型', on_delete=models.DO_NOTHING)
     # content = models.TextField(verbose_name='内容')
@@ -30,16 +30,6 @@ class Blog(models.Model):
 
     # readed_num = models.IntegerField(verbose_name='点击阅读量', default=0)
 
-    def get_read_num(self):
-        try:
-            return self.readnum.read_num
-
-        except exceptions.ObjectDoesNotExist:
-            # 错误类型 返回0
-            return 0
-
-        # readnum 对象 ?
-
     # 其中%s是占位符，先占个位子，用%后面的内容替换。
     # __str__()方法是对象的默认可读表示
     # 这种写法是有利于看清完整的字符串结构。也可以写成 "<Blog:" + self.title + ">" 直接把字符串拼接起来，明显要麻烦很多。另外self.title是python类的用法，取当前类的title字段值。
@@ -51,8 +41,4 @@ class Blog(models.Model):
         ordering = ['-created_time']
 
 
-class ReadNum(models.Model):
-    read_num = models.IntegerField(verbose_name='点击阅读量', default=0)
 
-    # 多对一  1--1OneToOneField
-    blog = models.OneToOneField(Blog, on_delete=models.DO_NOTHING)

@@ -42,13 +42,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
     'article',
     'mytest',
     'ckeditor',
     'taggit',  # 第三方的Django的标签应用，来实现这个功能。django-taggit是一个可复用的应用，提供主要一个了Tag模型状语从句：一个管理器，可以很容易的为任何模型添加标签。
     'ckeditor_uploader',  # django-ckeditor 将上传文件的功能迁移到ckeditor_uploader应用
-    'django.contrib.sitemaps',
-    'django.contrib.sites',
+    'read_statistics',
 ]
 
 MIDDLEWARE = [
