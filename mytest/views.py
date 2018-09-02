@@ -238,9 +238,8 @@ def blog_detail(request, blog_pk):
     response = render_to_response('blog_detail.html', context)  # 响应
     # 利用cookie  （在python中 是以字典的形式保存 ===使用保存key  ）来保存阅读点击量      response.set_cookie(key, value) 120s有效
     # max_age=120, expires=datetime 2选一 即可  不写的话 cookie就是关闭浏览器失效
-
-    # response.set_cookie('blog_%s_readed' % blog_pk, 'true')
-
-    response.set_cookie(read_cookie_key, 'true')  # 阅读cookie标记
     # response.set_cookie('blog_%s_readed' % blog_pk, 'true', max_age=120, expires=datetime)
+    # response.set_cookie('blog_%s_readed' % blog_pk, 'true')
+    response.set_cookie(read_cookie_key, 'true')  # 阅读cookie标记
+
     return response

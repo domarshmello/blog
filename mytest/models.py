@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 from taggit.managers import TaggableManager  # 添加django-taggit提供的TaggableManager管理器到Post模型：
-from read_statistics.models import ReadNumExpandMethod
+from read_statistics.models import ReadNumExpandMethod  #引入计算方法
 
 # Create your models here.
 
