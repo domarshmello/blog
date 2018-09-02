@@ -8,81 +8,77 @@
 
 {% block header_extends %}
     <link rel="stylesheet" href="{% static 'home.css' %}">
-<!--引入hcharts-->
-<script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <!--引入hcharts-->
+
 {% endblock %}
 
 {% block nav_home_active %}active{% endblock %}
 
 {% block content %}
 
-    <h3 class="home-content">cms网站首页</h3>
-    <p>{{read_nums}}</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div   id="container" class="col-sm-6 col-md-6 col-lg-6">
+                <!-- 图表容器 DOM -->
+                <!--在绘图前我们需要为 Highcharts 准备一个 DOM 容器，并指定其大小-->
 
-<!-- 图表容器 DOM -->
-<!--在绘图前我们需要为 Highcharts 准备一个 DOM 容器，并指定其大小-->
-<!--<div id="container"></div>-->
-<div id="container" style="width: 600px;height:400px;"></div>
-<script>
-    // 图表配置
-    let options = {
-        chart: { type: 'line' },
-        // title: { text: null },
-        title: '上一周文章点击阅读量',
-        xAxis: {
-            categories: {{ dates|safe }}   // x 轴分类
-            tickmarkPlacement: 'on', //替换
-    },
-    yAxis: {
-        title: { text: null },
-        labels:{ enabled: false },
-        gridLineDashStyle: 'Dash',
-    },
-    series: [   // 数据列
-        name: '阅读量',                     // 数据列名
-        data: {{ read_nums }}              // 数据
-    }],
-    plotOptions: {
-        line: {
-            dataLabels: {enabled: true
-            }
-        }
-    },
-    legend: { enabled: false },
-    credits: { enabled: false },
-    };
+                <div id="container"></div>
 
-    // 图表初始化函数
-    var chart = Highcharts.chart('container', options);
-</script>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <div id="container"></div>
+            </div>
+        </div>
+    </div>
 
 
-<script>
-    // 图表配置
-    var options = {
-        chart: {
-            type: 'line'                          //指定图表的类型，默认是折线图（line）
-        },
-        title: {
-            text: '我的第一个图表'                 // 标题
-        },
-        xAxis: {
-            categories: ['苹果', '香蕉', '橙子']   // x 轴分类
-        },
-        yAxis: {
+{#    <p>{{ read_nums }}</p>#}
+
+
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+    <script>
+        // 图表配置
+        var options = {
+            chart: {
+                type: 'line'                          //指定图表的类型，默认是折线图（line）
+            },
             title: {
-                text: '吃水果个数'                // y 轴标题
-            }
-        },
-        series: [{                              // 数据列
-            name: '小明',                        // 数据列名
-            data: [1, 0, 4]                     // 数据
-        }, {
-            name: '小红',
-            data: [5, 7, 3]
-        }]
-    };
-    // 图表初始化函数
-    var chart = Highcharts.chart('container', options);
-</script>
+                {#text: null                 // 标题#}
+                text: '上周文章点击阅读量'
+            },
+            xAxis: {
+                title: {
+                    text: '日期'                // y 轴标题
+                },
+                categories: {{ dates|safe }},  // x 轴分类
+                tickmarkPlacement: 'on'
+            },
+            yAxis: {
+                title: {
+                    text: '文章点击量数'                // y 轴标题
+                },
+                {#labels: {enabled: false},#}
+                gridLineDashStyle: 'Dash' //背景虚线
+            },
+            series: [{                              // 数据列
+                name: '点击量',                        // 数据列名
+                data: {{ read_nums }},              // 数据  ps 数据如果相同的话 影响纵轴的判断 会成一条直线
+                {# data: [5, 7, 3] ,#}
+                marker: {
+                    fillColor: '#BF0B23',
+                    radius: 5
+                }
+            }],
+            plotOptions: {
+                line: {
+                    dataLabels: {enabled: true}
+                }
+            },
+            legend: {enabled: false},
+            credits: {enabled: false}
+        };
+        // 图表初始化函数
+        var chart = Highcharts.chart('container', options);
+        console.log({{ read_nums }})
+    </script>
 {% endblock %}
